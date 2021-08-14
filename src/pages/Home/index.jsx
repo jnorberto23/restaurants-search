@@ -5,7 +5,7 @@ import MaterialIcon from '@material/react-material-icon';
 
 import logo from '../../assets/logo.svg';
 import restaurante from '../../assets/restaurante-fake.png';
-import Card from '../../components/ImageCard';
+import {Card, RestaurantCard} from '../../components';
 
 import { Container, Search, Logo, Wrapper, Map, Carousel, CarouselTitle } from './styles';
 
@@ -16,7 +16,7 @@ const Home = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: 3,
     //slidesToScroll: 4,
     adaptativeHeight: true,
   };
@@ -42,6 +42,7 @@ const Home = () => {
             <Card photo={restaurante} title="Cantinho 5"/>
           </Carousel>
         </Search>
+        <RestaurantCard/>
       </Container>
       <Map />
     </Wrapper>

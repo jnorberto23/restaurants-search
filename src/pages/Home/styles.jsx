@@ -21,7 +21,10 @@ export const Search = styled.section`
 `;
 
 export const Logo = styled.img`
-  margin-bottom: 15px;
+  padding-bottom: 15px;
+  width: 20vh;
+  margin: auto;
+  
 `;
 
 export const Map = styled.div`
@@ -35,6 +38,11 @@ export const Carousel = styled(Slider)`
 .slick-slide{
   margin-right: 1px;
 }
+
+/*.slick-slider{
+  margin-bottom: 0;
+  padding-bottom: 0;
+}*/
 `;
 
 export const CarouselTitle = styled.h1`

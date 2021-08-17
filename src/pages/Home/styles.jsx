@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
 
 export const Container = styled.aside`
   background-color: ${(props) => props.theme.colors.background};
-  width: 360px;
+  width: 25%;
   height: 100vh;
   overflow-y: auto;
 `;
@@ -29,8 +29,8 @@ export const Logo = styled.img`
 
 export const Map = styled.div`
   background-color: #f01a1a;
-  width: 800px;
-  max-width: 900px;
+  width: 70%;
+  max-width: 70vw;
   height: 500px;
 `;
 
@@ -39,10 +39,6 @@ export const Carousel = styled(Slider)`
   margin-right: 1px;
 }
 
-/*.slick-slider{
-  margin-bottom: 0;
-  padding-bottom: 0;
-}*/
 `;
 
 export const CarouselTitle = styled.h1`

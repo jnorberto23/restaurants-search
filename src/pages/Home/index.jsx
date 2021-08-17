@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import {useSelector} from 'react-redux';
 //import Slider from 'react-slick';
 import TextField, { Input } from '@material/react-text-field';
 import MaterialIcon from '@material/react-material-icon';
 
 import logo from '../../assets/logo.svg';
 import restaurante from '../../assets/restaurante-fake.png';
-import {Card, RestaurantCard, Modal, Map} from '../../components';
+import { Card, RestaurantCard, Modal, Map } from '../../components';
 
 import { Container, Search, Logo, Wrapper, Carousel, CarouselTitle } from './styles';
 
@@ -13,6 +14,7 @@ const Home = () => {
   const [inputValue, setInputValue] = useState('');
   const [modalOpened, setModalOpened] = useState(false);
   const [query, setQuery] = useState(null);
+  const { restaurants, restaurantSelected } = useSelector((state) => state.restaurants);
 
   const settings = {
     dots: false,
@@ -24,10 +26,10 @@ const Home = () => {
   };
 
   const handleKeyPress = (e) => {
-    if(e.key === 'Enter'){
+    if (e.key === 'Enter') {
       setQuery(inputValue);
     }
-  }
+  };
 
   return (
     <Wrapper>
@@ -38,25 +40,29 @@ const Home = () => {
             outlined
             label="Pesquisar restaurantes"
             trailingIcon={<MaterialIcon role="button" icon="search" />}>
-            <Input value={inputValue} 
-            onKeyPress={handleKeyPress} 
-            onChange={(e) => setInputValue(e.target.value)} 
+            <Input
+              value={inputValue}
+              onKeyPress={handleKeyPress}
+              onChange={(e) => setInputValue(e.target.value)}
             />
           </TextField>
           <CarouselTitle>Na sua área</CarouselTitle>
           <Carousel {...settings}>
-            <Card photo={restaurante} title="Cantinho 1"/>
-            <Card photo={restaurante} title="Cantinho 2"/>
-            <Card photo={restaurante} title="Cantinho 3"/>
-            <Card photo={restaurante} title="Cantinho 4"/>
-            <Card photo={restaurante} title="Cantinho 5"/>
+            
+        {restaurants.map((restaurant) => (
+          <Card title={restaurant.name} photo={restaurant.photos ? restaurant.photos[0].getUrl() : restaurante}/>
+        ))}
+         
           </Carousel>
-          
         </Search>
-        <RestaurantCard/>
+
+        {restaurants.map((restaurant) => (
+          <RestaurantCard restaurant={restaurant}/>
+        ))}
+
       </Container>
-      <Map query={query}/>
-   <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)}></Modal>
+      <Map query={query} />
+      <Modal open={modalOpened} onClose={() => setModalOpened(!modalOpened)}></Modal>
     </Wrapper>
   );
 };

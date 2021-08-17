@@ -1,7 +1,8 @@
 export const Types = {
     SET_RESTAURANTS: 'restaurants/SET_RESTAURANTS',
-    SET_RESTAURANT: 'restaurants/SET_RESTAURANT',
+    SET_RESTAURANT: 'restaurants/SET_RESTAURANT'
   };
+  
   
   const initialState = {
     restaurants: [],
@@ -12,8 +13,10 @@ export const Types = {
     switch (action.type) {
       case Types.SET_RESTAURANTS:
         return { ...state, restaurants: action.payload };
+        break;
       case Types.SET_RESTAURANT:
         return { ...state, restaurantSelected: action.payload };
+        break;
       default:
         return state;
     }

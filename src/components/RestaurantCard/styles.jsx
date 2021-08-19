@@ -14,7 +14,6 @@ export const Restaurant = styled.div`
   }
 `;
 
-
 export const RestaurantInfo = styled.div`
   display: flex;
   flex-direction: column;
@@ -39,9 +38,9 @@ export const Address = styled.span`
 `;
 
 export const RestaurantPhoto = styled.img`
+  display: ${(props) => (props.imageLoaded ? 'block' : 'hide')};
   width: 100px;
   height: 100px;
   border-radius: 6px;
   object-fit: cover;
 `;
-

@@ -1,4 +1,6 @@
+import Skeleton from '../Skeleton';
 import React from 'react';
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Card = styled.div`
@@ -19,10 +21,26 @@ const Title = styled.span`
   margin: 30px;
 `;
 
-const ImageCard = ({ photo, title }) => (
-  <Card photo={photo}>
-    <Title>{title}</Title>
-  </Card>
-);
+const ImageCard = ({ photo, title }) => {
+  const [imageLoaded, setImageLoaded] = useState(null);
+
+  useEffect(() => {
+    const imageLoaded = new Image();
+    imageLoaded.src = photo;
+    imageLoaded.onload = () => setImageLoaded(true);
+  }, [photo]);
+
+  return (
+    <>
+      {imageLoaded ? (
+        <Card photo={photo}>
+          <Title>{title}</Title>
+        </Card>
+      ) : (
+        <Skeleton width="90px" height="90px" />
+      )}
+    </>
+  );
+};
 
 export default ImageCard;

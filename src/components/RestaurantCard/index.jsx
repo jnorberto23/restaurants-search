@@ -3,9 +3,9 @@ import {Restaurant, RestaurantInfo, Title, Address, RestaurantPhoto} from './sty
 import ReactStarts from 'react-rating-stars-component';
 import restaurante from '../../assets/restaurante-fake.png'; 
 
-const RestaurantCard = ({restaurant}) => (
+const RestaurantCard = ({restaurant, onClick}) => (
 <Restaurant>
-    <RestaurantInfo>
+    <RestaurantInfo onClick={onClick}>
         <Title>{restaurant.name}</Title>
         <ReactStarts count={5} isHalf edit={false} value={restaurant.rating} activeColor="#e7711c">Avaliação</ReactStarts>
         <Address>{restaurant.vicinity || restaurant.formatted_address}</Address>

@@ -44,3 +44,4 @@ export const RestaurantPhoto = styled.img`
   border-radius: 6px;
   object-fit: cover;
 `;
+

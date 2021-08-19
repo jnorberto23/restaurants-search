@@ -24,11 +24,13 @@ export const Logo = styled.img`
   padding-bottom: 15px;
   width: 20vh;
   margin: auto;
+  
 `;
 
 export const Map = styled.div`
   background-color: #f01a1a;
-  width: 50%;
+  width: 70%;
+  max-width: 70vw;
   height: 500px;
 `;
 
@@ -37,6 +39,7 @@ export const Carousel = styled(Slider)`
   margin-right: 30px;
   padding-bottom: 10px;
 }
+
 `;
 
 export const CarouselTitle = styled.h1`

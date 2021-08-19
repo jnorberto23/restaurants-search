@@ -27,8 +27,7 @@ export const Logo = styled.img`
   margin: auto;
 `;
 
-export const Map = styled.div`
-  background-color: #f01a1a;
+export const Mapper = styled(Map)`
   width: 70%;
   max-width: 70vw;
   height: 500px;

@@ -9,7 +9,7 @@ import { Card, RestaurantCard, Map, Modal, Loader, Skeleton } from "../../compon
 import logo from '../../assets/logo.svg';
 import restaurante from '../../assets/restaurante-fake.png';
 
-import { Container, Search , Carousel , Logo, Wrapper,  CarouselTitle, ModalTitle, ModalContent} from './styles';
+import { Container, Search , Carousel , Logo, Wrapper,  CarouselTitle, ModalTitle, ModalContent, Mapper} from './styles';
 
 const Home = () => {
 

@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
 export const Container = styled.aside`
   background-color: ${(props) => props.theme.colors.background};
   width: 25%;
+  padding: auto;
   height: 100vh;
   overflow-y: auto;
 `;
@@ -24,7 +25,6 @@ export const Logo = styled.img`
   padding-bottom: 15px;
   width: 20vh;
   margin: auto;
-  
 `;
 
 export const Map = styled.div`

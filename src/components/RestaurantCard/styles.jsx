@@ -23,9 +23,9 @@ export const RestaurantInfo = styled.div`
 export const Title = styled.span`
   font-family: ${(props) => props.theme.fonts.regular};
   color: ${(props) => props.theme.colors.text};
-  font-size: 24px;
+  font-size: 16px;
   font-weight: bold;
-  line-height: 29px;
+
   margin-bottom: 10px;
 `;
 
@@ -39,9 +39,10 @@ export const Address = styled.span`
 `;
 
 export const RestaurantPhoto = styled.img`
-  width: 100px;
+  display: ${(props) => (props.imageLoaded ? 'block' : 'none')};
+  width:  100px;
   height: 100px;
-  border-radius: 6px;
   object-fit: cover;
+  border-radius: 6px;
 `;
 
